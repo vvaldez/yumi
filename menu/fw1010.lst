@@ -1,0 +1,9 @@
+default 0
+timeout=0
+
+title Automatic Firmware Update Version 10.10 (DVD) [Not Avail on 8GB version]
+find --set-root /multiboot/HP/fwdvd10/system/initrd.img
+kernel /multiboot/HP/fwdvd10/system/vmlinuz media=usb:/multiboot/HP/fwdvd10 rw root=/dev/ram0 ramdisk_size=355492 initrd=/multiboot/HP/fwdvd10/system/initrd.img init=/bin/init loglevel=3 ide=nodma ide=noraid nopat pnpbios=off vga=791 splash=silent showopts
+TYPE=AUTOMATIC
+initrd /multiboot/HP/fwdvd10/system/initrd.img
+boot

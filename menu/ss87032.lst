@@ -1,0 +1,10 @@
+# Original 64 bit Menu entry created and provided by Andy Campos
+# Edits done by Lance for further use with YUMI
+default 0
+timeout=0
+
+title HP SmartStart 8.70 x32
+find --set-root /multiboot/HP/ss870_x32/system/initrd.img
+kernel /multiboot/HP/ss870_x32/system/vmlinuz media=usb:/multiboot/HP/ss870_x32 rw root=/dev/ram0 ramdisk_size=407376 initrd=/multiboot/HP/ss870_x32/system/initrd.img init=/bin/init loglevel=3 ide=nodma ide=noraid nopat pnpbios=off vga=791 noexec32=off nox2apic splash=silent
+initrd /multiboot/HP/ss870_x32/system/initrd.img
+boot

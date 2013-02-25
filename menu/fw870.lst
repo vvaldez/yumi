@@ -1,0 +1,9 @@
+default 0
+timeout=0
+
+title HP Firmware Maintenance 8.70 (CD)
+find --set-root /multiboot/HP/fwcd/system/initrd.img
+kernel /multiboot/HP/fwcd/system/vmlinuz media=usb:/multiboot/HP/fwcd rw root=/dev/ram0 ramdisk_size=202448 initrd=/multiboot/HP/fwcd/system/initrd.img init=/bin/init loglevel=3 ide=nodma ide=noraid pnpbios=off vga=788
+ splash=silent hp_memcap=1 showopts
+initrd /multiboot/HP/fwcd/system/initrd.img
+boot

@@ -1,0 +1,52 @@
+default 0
+gfxmenu /multiboot/menu/hptools
+#color NORMAL HIGHLIGHT HELPTEXT HEADING
+#splashimage=/multiboot/menu/CamposUber.png
+#foreground=FFFFFF
+#background=000000
+
+
+title HP SmartStart 8.60 x64 (use this to deploy OS)
+find --set-root /multiboot/HP/ss860_x64/system/initrd.img
+kernel /multiboot/HP/ss860_x64/system/vmlinuz media=usb:/multiboot/HP/ss860_x64 rw root=/dev/ram0 ramdisk_size=396332 initrd=/multiboot/HP/ss860_x64/system/initrd.img init=/bin/init loglevel=3 ide=nodma ide=noraid pnpbios=off vga=791 noexec32=off nox2apic splash=silent
+initrd /multiboot/HP/ss860_x64/system/initrd.img
+boot
+
+title HP SmartStart 8.70 x64
+find --set-root /multiboot/HP/ss870_x64/system/initrd.img
+kernel /multiboot/HP/ss870_x64/system/vmlinuz media=usb:/multiboot/HP/ss870_x64 rw root=/dev/ram0 ramdisk_size=407376 initrd=/multiboot/HP/ss870_x64/system/initrd.img init=/bin/init loglevel=3 ide=nodma ide=noraid nopat pnpbios=off vga=791 noexec32=off nox2apic splash=silent
+initrd /multiboot/HP/ss870_x64/system/initrd.img
+boot
+
+title HP Firmware Maintenance 8.70 (CD)
+find --set-root /multiboot/HP/fwcd/system/initrd.img
+kernel /multiboot/HP/fwcd/system/vmlinuz media=usb:/multiboot/HP/fwcd rw root=/dev/ram0 ramdisk_size=202448 initrd=/multiboot/HP/fwcd/system/initrd.img init=/bin/init loglevel=3 ide=nodma ide=noraid pnpbios=off vga=788
+ splash=silent hp_memcap=1 showopts
+initrd /multiboot/HP/fwcd/system/initrd.img
+boot
+
+title Automatic Firmware Update Version 9.30 (DVD) [Not Avail on 8GB version]
+find --set-root /multiboot/HP/fwdvd/system/initrd.img
+kernel /multiboot/HP/fwdvd/system/vmlinuz media=usb:/multiboot/HP/fwdvd rw root=/dev/ram0 ramdisk_size=355492 initrd=/multiboot/HP/fwdvd/system/initrd.img init=/bin/init loglevel=3 ide=nodma ide=noraid nopat pnpbios=off vga=791 splash=silent showopts
+TYPE=AUTOMATIC
+initrd /multiboot/HP/fwdvd/system/initrd.img
+boot
+
+title ETD Meatgrinder x86
+find --set-root /multiboot/ISOS/Meatgrinder_x86.iso
+map /multiboot/ISOS/Meatgrinder_x86.iso (hd32)
+map --hook
+chainloader (hd32)
+
+title ETD Meatgrinder x64
+find --set-root /multiboot/ISOS/Meatgrinder_x86.iso
+map /multiboot/ISOS/Meatgrinder_x86.iso (hd32)
+map --hook
+chainloader (hd32)
+
+ 
+
+
+
+
+

@@ -1,0 +1,2 @@
+IMAGE='/dev/ram1;/multiboot/opensuse12/openSUSE-12.2-livecd-gnome.i686;2.8.0'
+UNIONFS_CONFIG='/dev/ram1,/dev/loop1,clicfs'
